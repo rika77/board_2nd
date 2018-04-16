@@ -1,0 +1,2 @@
+class MyThreadsController < ApplicationController
+end

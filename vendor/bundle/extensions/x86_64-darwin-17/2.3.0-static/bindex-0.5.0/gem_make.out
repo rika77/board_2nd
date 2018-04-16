@@ -1,0 +1,15 @@
+current directory: /Users/fujimakirika/FiNC/2/6_final/board_plus/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+/Users/fujimakirika/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20180407-48557-1v6h49f.rb extconf.rb
+creating Makefile
+
+current directory: /Users/fujimakirika/FiNC/2/6_final/board_plus/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/fujimakirika/FiNC/2/6_final/board_plus/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/fujimakirika/FiNC/2/6_final/board_plus/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/local/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20180407-48557-d881eu/bindex

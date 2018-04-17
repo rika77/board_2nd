@@ -1,0 +1,19 @@
+<! 新規作成画面の生成>
+<h2>
+  New Thread
+</h2>
+
+<! フォームを作ろう. title & body>
+<%= form_for :my_thread, url: my_threads_path do |f| %>
+<p>
+  <! title>
+  <%= f.text_field :title, placeholder: 'enter title' %>
+</p>
+<p>
+  <! body>
+  <%= f.text_area :body, placeholder: 'enter content' %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>

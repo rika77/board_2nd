@@ -1,0 +1,22 @@
+<! viewww>
+
+<h2>
+  <%= link_to 'New Thread', new_my_thread_path, class: 'header-menu' %>
+  All My Threads</h2>
+<ul>
+  <% @my_threads.each do |my_thread| %>
+  <li>
+    <%= link_to my_thread.title, my_thread_path(my_thread) %>
+    <! それぞれのbutton_idを区別するために、引数にmy_threadを取る必要がある>
+    <%= link_to '[Edit]', edit_my_thread_path(my_thread), class: 'option-menu' %>
+    <%= link_to '[Delete]',
+        my_thread_path(my_thread),
+        # my_thread_pathは色々あるので、deleteだと明示してやる必要がある-> method
+        method: :delete,
+        class: 'option-menu',
+        # 確認画面をつけよう
+        data: { confirm: 'Sure?'}
+     %>
+  </li>
+  <% end %>
+</ul>

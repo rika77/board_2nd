@@ -1,0 +1,16 @@
+<%= form_for @my_thread do |f| %>
+<p>
+  <%= f.text_field :title, placeholder: 'enter title' %>
+  <% if @my_thread.errors.messages[:title].any? %>
+  <span class="error"><%= @my_thread.errors.messages[:title][0]%></span>
+  <% end %>
+</p>
+<p>
+  <%= f.text_area :body, placeholder: 'enter body' %>
+  <% if @my_thread.errors.messages[:body].any? %>
+  <span class="error"><%= @mythread.errors.messages[:body][0]%></span>
+  <% end %>
+</p>
+<p>
+  <%= f.submit %>
+<% end %>

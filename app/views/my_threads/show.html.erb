@@ -1,0 +1,35 @@
+<! 記事の詳細表示画面>
+<h2><%= @my_thread.title %></h2>
+<h2><%= @my_thread.body %></h2>
+
+<! ここで、コメントを追加できるようにしよう>
+<!
+<h3>Comments</h3>
+<% if @my_thread.comments.any? %>
+<ul>
+  <% @my_thread.comments.each do |comment| %>
+  <li>
+    <%= comment.body %>
+    <%= link_to '[Edit]', edit_my_thread_comment_path(@my_thread,comment), class: 'option-menu' %>
+    <%= link_to '[Delete]',
+        my_thread_comment_path(@my_thread,comment),
+        # my_thread_pathは色々あるので、deleteだと明示してやる必要がある-> method
+        method: :delete,
+        class: 'option-menu',
+        # 確認画面をつけよう
+        data: { confirm: 'Sure?'}
+     %>
+
+  </li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for ([@my_thread, @my_thread.comments.build]) do |f| %>
+<p>
+  <%= f.text_field :body, placeholder: 'enter title' %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
